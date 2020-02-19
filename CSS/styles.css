@@ -65,20 +65,23 @@ footer > p {
   margin: 5%;
   margin-top: 75px;
   padding-top: 5%;
+}
+
+#flip-card-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-around;
   align-content: flex-start;
   align-items: stretch;
 }
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
+  margin-bottom: 20px;
   background-color: transparent;
   width: 200px;
   height: 300px;
-  border: 1px solid #f1f1f1;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 
@@ -94,7 +97,7 @@ footer > p {
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
 .flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
+  transform: rotateY(-180deg);
 }
 
 /* Position the front and back side */
@@ -113,15 +116,29 @@ footer > p {
   color: black;
 }
 
+.book-cover {
+  height: 100%;
+  width: 100%;
+}
+
 /* Style the back side */
 .flip-card-back {
-  background-color: dodgerblue;
+  background-color: crimson;
   color: white;
   transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px;
+}
+
+.more-info-btn {
+  width: 50%;
 }
 
 footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   height: 7.5%;
   width: 100%;
