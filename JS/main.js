@@ -53,6 +53,7 @@ function generateFlipCards(apiData) {
   }
 }
 
+// Function for search bar
 function searchBar() {
   let searchbar = document.getElementById("searchbar");
   let value = searchbar.value.toUpperCase();
