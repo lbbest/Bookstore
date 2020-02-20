@@ -6,11 +6,12 @@
 }
 
 .nav-bar {
-  position: absolute;
+  position: fixed;
+  z-index: 1;
   top: 0;
   height: 75px;
   width: 100%;
-  padding: 0 10px 0 10px;
+  padding: 0 5% 0 5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -24,6 +25,10 @@
   width: 100%;
 }
 
+.logo > h1 {
+  font-size: 2em;
+}
+
 .logo > h1,
 .searchbar > button {
   margin-left: 2%;
@@ -34,11 +39,13 @@
   align-items: center;
   justify-content: flex-end;
   width: 100%;
+  height: 100%;
 }
 
 .searchbar > input {
   width: 50%;
-  height: 2em;
+  height: 50%;
+  font-size: 1em;
 }
 
 .logo > h1,
@@ -62,7 +69,7 @@ footer > p {
 }
 
 .content-container {
-  margin: 5%;
+  margin: 0% 5% 2% 5%;
   margin-top: 75px;
   padding-top: 5%;
 }
@@ -78,11 +85,15 @@ footer > p {
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
-  margin-bottom: 20px;
+  margin: 10px 0 10px 0;
   background-color: transparent;
   width: 200px;
   height: 300px;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+.flip-card:nth-last-child(-n + n) {
+  margin-left: 10px;
 }
 
 /* This container is needed to position the front and back side */
@@ -151,7 +162,7 @@ footer > p {
 footer {
   position: relative;
   bottom: 0;
-  height: 7.5%;
+  height: 50px;
   width: 100%;
   background-color: crimson;
   display: flex;

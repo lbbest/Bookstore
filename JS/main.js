@@ -53,8 +53,18 @@ function generateFlipCards(apiData) {
   }
 }
 
-// Turn above element creations into single function that can be called upon
+function searchBar() {
+  let searchbar = document.getElementById("searchbar");
+  let value = searchbar.value.toUpperCase();
+  let container = document.getElementById("flip-card-container");
+  let cards = container.getElementsByClassName("flip-card");
 
-// Create function for opening detail image in overlay window on more info button click
-
-// Create function for searchbar
+  for (i = 0; i < cards.length; i++) {
+    let title = cards[i].textContent.toUpperCase();
+    if (title.includes(value)) {
+      cards[i].style.display = "";
+    } else {
+      cards[i].style.display = "none";
+    }
+  }
+}
