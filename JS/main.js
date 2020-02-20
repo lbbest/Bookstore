@@ -12,8 +12,6 @@ ajaxCallData("https://api.myjson.com/bins/zyv02");
 
 function generateFlipCards(apiData) {
   let container = document.getElementById("flip-card-container");
-  console.log(container);
-  console.log(apiData);
   for (i = 0; i < apiData.books.length; i++) {
     // Create new flip card
     let flipcard = document.createElement("div");
@@ -39,17 +37,18 @@ function generateFlipCards(apiData) {
     // Insert h1 for title
     let bookTitle = document.createElement("h2");
     bookTitle.classList.add("book-title");
-    bookTitle.innerText = apiData.books[i].title;
+    bookTitle.innerText = apiData.books[i].title.toUpperCase();
     flipcardback.appendChild(bookTitle);
     // Insert p for description
     let bookDescription = document.createElement("p");
     bookDescription.classList.add("book-description");
     bookDescription.innerText = apiData.books[i].description;
     flipcardback.appendChild(bookDescription);
-    // Insert button for moreinfo
-    let moreInfo = document.createElement("button");
+    // Insert button for moreinfo with detail anchor
+    let detail = `<a href="${apiData.books[i].detail}" data-fancybox><button>More Info</button></a>`;
+    let moreInfo = document.createElement("div");
     moreInfo.classList.add("more-info-btn");
-    moreInfo.innerText = "More Info";
+    moreInfo.innerHTML = detail;
     flipcardback.appendChild(moreInfo);
   }
 }
